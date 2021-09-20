@@ -1,0 +1,92 @@
+<script>
+$(document).ready(function() {    
+
+$('#sub_navi li a:not(:first)').addClass('inactive');
+$('.container').hide();
+$('.container:first').show();
+    
+$('#sub_navi li a').click(function(){
+    var t = $(this).attr('id');
+  if($(this).hasClass('inactive')){ //this is the start of our condition 
+    $('#sub_navi li a').addClass('inactive');           
+    $(this).removeClass('inactive');
+    
+    $('.container').hide();
+    $('#'+ t + 'C').fadeIn('slow');
+ }
+});
+
+});
+
+</script>
+
+<ul id="sub_navi">
+
+      <li><a id="tab1">Tab 1</a></li>
+      <li><a id="tab2">Tab 2</a></li>
+      <li><a id="tab3">Tab 3</a></li>
+      <li><a id="tab4">Tab 4</a></li>
+
+</ul>
+          <div class="container" id="tab1C">Content 1</div>
+          <div class="container" id="tab2C">Content 2</div>
+          <div class="container" id="tab3C">Content 3</div>
+          <div class="container" id="tab4C">Content 4</div>
+         
+          <style>
+              #sub_navi {
+   width: 100%;
+   height:30px; 
+   border-bottom: solid 1px #CCC;
+   padding-right: 2px;
+   margin-top: 30px;
+}
+a {cursor:pointer;}
+
+#sub_navi li {
+    float:left; 
+    list-style:none; 
+    border-top:1px solid #ccc; 
+    border-left:1px solid #ccc; 
+    border-right:1px solid #ccc; 
+    margin-right:5px; 
+    border-top-left-radius:3px;  
+    border-top-right-radius:3px;
+    outline:none;
+}
+
+#sub_navi li a {
+    font-weight: bold; 
+    color: #5685bc;;
+   padding-top: 5px;
+   padding-left: 7px;
+   padding-right: 7px;
+    padding-bottom: 8px; 
+    display:block; 
+    background: #FFF;
+    border-top-left-radius:3px; 
+    border-top-right-radius:3px; 
+    text-decoration:none;
+    outline:none;
+}
+
+#sub_navi li a.inactive{
+    padding-top:5px 8px 8px 8px;
+    color:#666666;
+    background: #EEE;
+    outline:none;
+}
+
+#sub_navi li a:hover, #tabs li a.inactive:hover {
+    color: #5685bc;
+      outline:none;
+}
+
+.container {
+    clear:both;           
+    width:100%; 
+    text-align:left;
+    padding-top: 20px;
+}
+
+          </style>
